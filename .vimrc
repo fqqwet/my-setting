@@ -80,10 +80,10 @@ let g:syntastic_python_checkers=[ 'python', 'pyflakes' ]
 let g:syntastic_go_checkers = [ 'go' ]
 let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = [ 'perl', 'podchecker' ]
-let g:syntastic_c_compiler='gcc'
+let g:syntastic_c_compiler='clang'
 "let g:syntastic_c_compiler = 'i386-elf-gcc'
 let g:syntastic_c_compiler_options = '-std=gnu99'
-let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_vim_checkers = ['vimlint']
@@ -162,7 +162,7 @@ au User Ncm2Plugin call ncm2#register_source({
             \ 'on_complete': ['ncm2#on_complete#omni', 'csscomplete#CompleteCSS'],
             \ })
 
-let g:ncm2_pyclang#library_path = '/Library/Developer/CommandLineTools/usr/lib/libclang.dylib'
+let g:ncm2_pyclang#library_path = '/usr/local/Cellar/llvm/6.0.0/lib/libclang.dylib'
 "let g:ncm2_pyclang#args_file_path = ['.config']
 
 "snippet settings   
@@ -231,7 +231,7 @@ let g:markdown_syntax_conceal = 0
 
 "au FileType c let &makeprg="clang -std=gnu99 -g -o %< % && ./%<"
 au FileType c let &makeprg="gcc -std=gnu99 -g -o %< %"
-au FileType cpp let &makeprg="g++ -std=c++11 -g -o %< %"
+au FileType cpp let &makeprg="g++ -std=c++14 -g -o %< %"
 "au FileType cpp let &makeprg="clang -std=c++11 -g -o %< % && ./%<"
 au FileType python let &makeprg="python3 %"
 au FileType go let &makeprg="go build -gcflags \"-N -l\" % && ./%<"
