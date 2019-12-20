@@ -77,14 +77,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers=[ 'python', 'pyflakes' ]
 let g:syntastic_go_checkers = [ 'go' ]
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = [ 'perl', 'podchecker' ]
-let g:syntastic_c_compiler='clang'
-"let g:syntastic_c_compiler = 'i386-elf-gcc'
+let g:syntastic_c_compiler='gcc'
+let g:syntastic_c_check_header = 1
 let g:syntastic_c_compiler_options = '-std=gnu99'
-let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_check_header = 1
 let g:syntastic_cpp_compiler_options = '-std=c++14'
-let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
 let g:syntastic_vim_checkers = ['vimlint']
 let g:syntastic_vimlint_options = { 'EVL103': 1 }
 let g:syntastic_tex_checkers = ['chktex']
