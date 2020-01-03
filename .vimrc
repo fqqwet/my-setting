@@ -82,7 +82,7 @@ let g:syntastic_c_check_header = 1
 let g:syntastic_c_compiler_options = '-std=gnu99'
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_cpp_compiler_options = '-std=c++14'
+let g:syntastic_cpp_compiler_options = '-std=c++17'
 let g:syntastic_vim_checkers = ['vimlint']
 let g:syntastic_vimlint_options = { 'EVL103': 1 }
 let g:syntastic_tex_checkers = ['chktex']
@@ -103,9 +103,8 @@ let g:ncm2#sorter = "abbrfuzzy"
 let g:ncm2#matcher = "abbrfuzzy"
 
 let g:neoinclude#paths = {'cpp': '/usr/local/include/' }
-"{'c' : '/usr/include/', 'cpp' : '/usr/local/include/c++', 'boost' : '/usr/local/include/' }
 
-"
+
 autocmd BufEnter * call ncm2#enable_for_buffer()
 set completeopt=noinsert,menuone,noselect
 
@@ -160,7 +159,7 @@ au User Ncm2Plugin call ncm2#register_source({
             \ })
 
 let g:ncm2_pyclang#library_path = '/usr/local/Cellar/llvm/6.0.0/lib/libclang.dylib'
-"let g:ncm2_pyclang#args_file_path = ['.config']
+
 
 "snippet settings   
 " Press enter key to trigger snippet expansion
@@ -230,9 +229,8 @@ let g:tex_conceal = ""
 let g:markdown_syntax_conceal = 0
 
 
-"au FileType c let &makeprg="clang -std=gnu99 -g -o %< % && ./%<"
 au FileType c let &makeprg="gcc -std=gnu99 -g -o %< %"
-au FileType cpp let &makeprg="g++ -std=c++14 -g -o %< %"
+au FileType cpp let &makeprg="g++ -std=c++17 -g -o %< %"
 au FileType python let &makeprg="python3 %"
 au FileType go let &makeprg="go build -gcflags \"-N -l\" % && ./%<"
 au FileType markdown let &makeprg="pandoc % -o %<.pdf -H ~/.pandoc_opt.sty"
