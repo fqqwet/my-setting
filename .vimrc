@@ -213,8 +213,12 @@ else
     nmap <C-\> :ConqueTermVSplit zsh<CR>
 endif
 nmap <m-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-vmap <C-x> :!pbcopy<CR>
-vmap <C-c> :w !pbcopy<CR><CR>
+
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
+
 
 autocmd FileType python setlocal ts=2 sw=2
 
